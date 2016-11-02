@@ -28,7 +28,7 @@
 	<mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <bean id="loggerInterceptor" class="com.sample.common.Interceptor"/>
+            <bean id="Interceptor" class="com.sample.common.Interceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
     
