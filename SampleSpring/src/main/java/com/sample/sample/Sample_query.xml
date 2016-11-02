@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="sample">
+     
+    <select id="selectBoardList" resultType="hashmap">
+        <![CDATA[
+            SELECT    JOB_ID
+            		, PROC_ID
+            		, PROC_NM
+            		, PROC_EXE_STA
+            		, TO_CHAR( PROC_STR_TS, 'YYYYMMDD HH:MI:SSSSS' ) AS STR_TS
+                	, TO_CHAR( PROC_END_TS, 'YYYYMMDD HH:MI:SSSSS' ) AS END_TS
+                	, REG_USR_ID
+            FROM AMLDEV.RBA_PROC_LOG
+            ORDER BY JOB_ID DESC,PROC_ID DESC 
+        ]]>
+    </select>
+     
+</mapper>
