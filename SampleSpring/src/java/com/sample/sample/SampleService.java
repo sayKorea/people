@@ -8,7 +8,6 @@ import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sample.common.DAO;
@@ -19,12 +18,12 @@ import com.sample.common.DAO;
  *
  */
 @Service("sampleService")
-public class SampleService extends DAO {
+public class SampleService {
 	
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 	
-//	@Resource(name="DAO")
-//	private DAO dao;
+	@Resource(name="DAO")
+	private DAO dao;
 	
 	/**
 	 * @param commandMap
@@ -32,11 +31,11 @@ public class SampleService extends DAO {
 	 * @return
 	 * @throws Exception
 	 */
+	@SuppressWarnings("unchecked")
 	public List<Map<String,String>> getMenuList(Map<String,Object> paramMap) throws Exception{
 		log.info("Welcome home! The client locale is {}.");
 		List<Map<String,String>> rtnList = new ArrayList<Map<String,String>>();
-		rtnList = selectList("sample.selectBoardList") ;
+		rtnList = dao.selectList("sample.selectBoardList") ;
         return rtnList;
     }
-
 }

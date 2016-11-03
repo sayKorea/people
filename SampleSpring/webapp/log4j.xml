@@ -22,13 +22,10 @@
     </appender>
     
 	<!-- Application Loggers -->
-	<logger name="com.sample.spring">
+	<logger name="com.sample">
 		<level value="debug" />
+		<appender-ref ref="console"/>
 	</logger>
-	<logger name="first" additivity="false">
-        <level value="debug" />
-        <appender-ref ref="console"/>
-    </logger>
      
     <!-- Query Loggers -->
     <logger name="jdbc.sqlonly" additivity="false">  
