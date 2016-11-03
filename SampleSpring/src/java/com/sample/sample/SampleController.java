@@ -43,7 +43,7 @@ public class SampleController {
 		log.debug(formattedDate);
 		sampleService.getMenuList(paramMap);
 		ModelAndView mv = new ModelAndView("");
-        log.debug("ÀÎÅÍ¼ÁÅÍ Å×½ºÆ®");
+        log.debug("ìƒ˜í”Œ ì½˜íŠ¸ë¡¤ëŸ¬");
         mv.addObject("serverTime", formattedDate);
         mv.setViewName("home");
         return mv;

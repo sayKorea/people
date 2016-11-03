@@ -22,7 +22,8 @@ public class SampleService {
 	
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	@Resource(name="DAO")
+	@Inject
+	@Named("DAO")
 	private DAO dao;
 	
 	/**
